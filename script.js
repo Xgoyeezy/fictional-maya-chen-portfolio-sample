@@ -1,7 +1,25 @@
 const root = document.documentElement;
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const priceLoader = document.querySelector(".price-loader");
 
 const clamp = (value, min = 0, max = 1) => Math.min(Math.max(value, min), max);
+
+if (priceLoader) {
+  const hidePriceLoader = () => {
+    priceLoader.classList.add("is-hidden");
+    window.setTimeout(() => priceLoader.remove(), reduceMotion ? 0 : 380);
+  };
+
+  const schedulePriceLoader = () => {
+    window.setTimeout(hidePriceLoader, reduceMotion ? 0 : 1250);
+  };
+
+  if (document.readyState === "loading") {
+    window.addEventListener("DOMContentLoaded", schedulePriceLoader, { once: true });
+  } else {
+    window.requestAnimationFrame(schedulePriceLoader);
+  }
+}
 
 function enableSectionLinksWithoutHistory() {
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
