@@ -1,7 +1,7 @@
 ﻿# Maya Chen Creative Portfolio Sample
 
-Fictional one-page creative portfolio sample with cinematic scroll motion, project cards, notes, and contact.
+Fictional animated one-page creative portfolio sample with cinematic scroll motion, project cards, notes, and contact.
 
-- Sample price shown: $250 plus custom motion add-on
+- Sample price shown: $350 ($250 base + $100 animation)
 - All names, emails, projects, notes, and details are fake
 - Same-page anchor links scroll without adding browser history entries
